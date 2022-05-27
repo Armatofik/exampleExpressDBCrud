@@ -8,3 +8,4 @@
 ### Docker run example:
 - Build:`docker build . -t <username>/<name>`
 - Run: `docker run -p 5000:5000 -d <username>/<name>:latest`
+- You can throw a file with environment variables into docker, they can be used in config file (should even)
