@@ -4,17 +4,20 @@ const roleNumber = require('../consts/roles');
 
 module.exports = (req, res, next) => {
   const {Authorization} = req.header;
+
   switch (Authorization) {
     case reader:
       req.user.role = roleNumber.READER;
-      return next()
+      break;
     case operator:
       req.user.role = roleNumber.OPERATOR;
-      return next()
+      break;
     case admin:
       req.user.role = roleNumber.ADMIN;
-      return next()
+      break;
     default:
       return res.sendStatus(STATUS_CODE.UNAUTHORIZED);
   }
+  
+  return next();
 };
