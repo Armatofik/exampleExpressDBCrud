@@ -2,6 +2,7 @@ const STATUS_CODE = require('../../consts/statusCode');
 
 module.exports = (req, res) => {
   const {tableName, id} = req.params;
+  
   if (!req.models[tableName]) {
     res.sendStatus(STATUS_CODE.NOT_FOUND);
   }
